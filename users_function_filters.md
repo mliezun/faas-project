@@ -13,13 +13,15 @@ pub struct NetworkFilters {
 
 #[repr(C)]
 pub struct FilesystemFilters {
-    pub allowed_paths: *mut cty::c_char,
+    pub allowed_paths_read: *mut cty::c_char,
+    pub allowed_paths_write: *mut cty::c_char,
 }
 
 #[repr(C)]
 pub struct Limits {
     pub open_files: cty::c_int,
     pub memory_bytes: cty::c_int,
+    pub cpu_units: cty::c_int,
 }
 
 #[repr(C)]
